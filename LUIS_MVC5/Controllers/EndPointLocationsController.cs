@@ -37,7 +37,7 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Mani");
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return View();
             }            
@@ -65,7 +65,7 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Mani");
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 return View("Error");
             }
@@ -99,7 +99,7 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Mani");
                 }                
             }
-            catch(Exception ex)
+            catch
             {
                 return View();
             }
@@ -128,7 +128,7 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Mani");
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 return View("Error");
             }
@@ -158,7 +158,7 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Error");
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 return View();
             }
@@ -187,11 +187,11 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Mani");
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 return View("Error");
             }
-            return View();
+            
         }
         // POST: EndPointLocations/Delete/5
         [HttpPost]

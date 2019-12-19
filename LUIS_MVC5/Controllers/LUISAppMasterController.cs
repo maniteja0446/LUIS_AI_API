@@ -69,7 +69,7 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Error");
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 return View();
             }
@@ -86,7 +86,7 @@ namespace LUIS_MVC5.Controllers
                     lUISCultures = JsonConvert.DeserializeObject<List<LUISCultures>>(restResponse.Content);
                 }
             }
-            catch (Exception ex)
+            catch 
             {
 
                 throw;
@@ -208,7 +208,7 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Error");
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 return View();
             }
@@ -269,7 +269,7 @@ namespace LUIS_MVC5.Controllers
                     throw returnexception;
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 return RedirectToAction("Error");
             }
@@ -311,7 +311,7 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Error");
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 return View();
             }
@@ -357,7 +357,7 @@ namespace LUIS_MVC5.Controllers
                     throw returnexception;
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 return View("Error");
             }
@@ -399,11 +399,11 @@ namespace LUIS_MVC5.Controllers
                     return RedirectToAction("Error");
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 return View();
             }
-            return View();
+           
         }
 
         // POST: LUISAppMaster/Delete/5
