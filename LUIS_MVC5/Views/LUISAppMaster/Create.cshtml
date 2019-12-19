@@ -1,0 +1,97 @@
+﻿@model LUIS_MVC5.Models.LUISMasterApp
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>LUISMasterApp</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.AName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ADescription, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ADescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ADescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ACulture, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">        
+                @Html.DropDownListFor(m => m.ACulture, new SelectList(Model.LUISCulturesList, "code", "name"), "--Please Select--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ACulture, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AtokenizerVersion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">        
+                @Html.DropDownList("AtokenizerVersion", new SelectList(string.Empty, "Value", "Text"), "Your Tokens List", new {  @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AtokenizerVersion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AUsageScenario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.AUsageScenario,
+                    new SelectList(Model.UsageScenarioList), "Select Any One", new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(model => model.AUsageScenario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Adomain, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">        
+                @Html.DropDownListFor(m => m.Adomain,
+                    new SelectList(Model.GetDomainsList), "Select Any One", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Adomain, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AinitialVersionId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AinitialVersionId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AinitialVersionId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EndPointID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+        
+                @Html.DropDownListFor(model => model.EndPointID, new SelectList(Model.LuisEndPointLocations, "LID", "LEndPointCode"), "Select Any Item", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EndPointID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval"),
+    @Scripts.Render("~/bundles/luisjquery")
+}
+

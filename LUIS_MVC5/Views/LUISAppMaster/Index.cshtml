@@ -1,0 +1,93 @@
+﻿@model IEnumerable<LUIS_MVC5.Models.LUISMasterApp>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.AID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACulture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AtokenizerVersion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AUsageScenario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adomain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AinitialVersionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppID)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ADescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ACulture)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AtokenizerVersion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AUsageScenario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adomain)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AinitialVersionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppID)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.AID  }) |
+                    @Html.ActionLink("Details", "Details", new {  id=item.AID  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.AID})
+                </td>
+            </tr>
+        }
+    }
+    else {
+        <tr>
+            <td class="text-center">No Data Found</td>
+        </tr>
+        @*<h1>No Data Found</h1>*@
+    }
+
+
+</table>

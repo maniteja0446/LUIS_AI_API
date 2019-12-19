@@ -1,0 +1,44 @@
+﻿@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Error</title>
+    </head>
+    <body>
+        <hgroup>
+            <h1>Error.</h1>
+            <h2>An error occurred while processing your request.</h2>
+        </hgroup>
+    </body>
+    </html>*@
+
+@model LUIS_MVC5.Models.Global_Classes.ErrorMessageHandler
+
+    <table>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.ErrorLine)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.ErrorMessage)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.ErrorNumber)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.ErrorSeverity)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.ErrorState)
+            </td>
+        </tr>
+    </table>
+

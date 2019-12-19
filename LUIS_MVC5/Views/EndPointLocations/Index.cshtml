@@ -1,0 +1,88 @@
+﻿@model IEnumerable<LUIS_MVC5.Models.LuisEndPointLocations>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create","EndPointLocations")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.LID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LEndPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LEndPointUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LEndPointCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Record_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsertedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeletedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPAddress)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.LID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LEndPoint)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LEndPointUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LEndPointCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Record_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InsertedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeletedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IPAddress)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.LID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.LID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.LID })
+                </td>
+            </tr>
+        }
+    }
+
+
+</table>

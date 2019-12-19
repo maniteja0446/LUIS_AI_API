@@ -1,0 +1,105 @@
+﻿@model LUIS_MVC5.Models.LuisEndPointLocations
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LuisEndPointLocations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Record_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Record_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeletedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeletedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IPAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IPAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LEndPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LEndPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LEndPointUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LEndPointUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LEndPointCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LEndPointCode)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
